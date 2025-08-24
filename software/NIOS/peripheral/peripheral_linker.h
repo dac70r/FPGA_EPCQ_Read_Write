@@ -1,0 +1,8 @@
+#ifndef PERIPHERAL_LINKER_H		// if peripheral_linker.h is not defined
+#define PERIPHERAL_LINKER_H
+
+#include "sys/alt_sys_init.h"
+
+
+
+#endif /* PERIPHERAL_LINKER_H */

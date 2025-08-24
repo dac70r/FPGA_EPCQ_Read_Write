@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
+		<item value="658" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="711" key="DIALOG_HEIGHT"/>
+		<item value="1122" key="DIALOG_X_ORIGIN"/>
+		<item value="311" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="PDOMSearchPage">
+		<item value="false" key="caseSensitive"/>
+		<item value="227191" key="searchFlags"/>
+		<list key="previousPatterns">
+			<item value="alt_epcq_controller2_dev"/>
+			<item value="epcq_dev_ptr"/>
+			<item value="EPCQ_AVL_CSR"/>
+			<item value="EPCQ_AVL_MEM"/>
+			<item value="ALTERA_EPCQ_CONTROLLER2_AVL_MEM_AVL_CSR_INSTANCEEPCQEPCQ_AVL_MEMEPCQ_AVL_CSREPCQ"/>
+			<item value="ALTERA_EPCQ_CONTROLLER2_AVL_MEM_AVL_CSR_INSTANCE"/>
+		</list>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+</section>

@@ -1,0 +1,57 @@
+
+#include "sys/alt_stdio.h"
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "stdint.h"
+#include "altera_epcq_controller2.h"
+#include "sys/alt_sys_init.h"
+#include "sys/alt_flash.h"
+
+// External pointer to the EPCQ device
+extern alt_epcq_controller2_dev *epcq_dev_ptr;
+
+int main()
+{ 
+  alt_putstr("Hello from Nios II!\n");
+  uint8_t on_off = 1;
+  unsigned char buffer[256];
+  int offset = 0x0000;
+  int length = sizeof(buffer);
+
+  /* Event loop never exits. */
+  while (1){
+
+	  IOWR(LED_BASE, 0, on_off);
+	  on_off = ~on_off;
+	  alt_busy_sleep(1000000);
+
+	  //int alt_epcq_controller2_read(alt_flash_dev *flash_info, int offset, void *dest_addr, int length);
+	  uint8_t result = alt_epcq_controller2_read(&epcq_dev_ptr->dev, offset, buffer, length);
+	  alt_flash_fd *flash_fd = alt_flash_open(&epcq_dev_ptr->dev); // Use the flash device name
+	  if (flash_fd == NULL) {
+	      printf("Failed to open flash device\n");
+	      return -1;
+	  }
+
+	  for (int i = 0; i < 20000; i++) {
+		uint8_t data = IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + i);
+		printf("%02X ", data);
+		//IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + i, data+1);
+		if ((i+1)%16==0) printf("\n");
+	}
+  };
+
+  return 0;
+}
+
+//IOWR_8DIRECT(EPCQ_AVL_CSR_BASE, 0x000000, 0x06);
+//IOWR_8DIRECT(EPCQ_AVL_CSR_BASE, 0x000000, 0x9F);
+//uint8_t data = IORD_8DIRECT(EPCQ_AVL_CSR_BASE, 0x000000);
+	/*
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 0, 0x64); // d
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 1, 0x65); // e
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 2, 0x6E); // n
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 3, 0x6E); // n
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 4, 0x69); // i
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 5, 0x73); // s
+	*/

@@ -1,0 +1,33 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst NIOS.EPCQ.clk -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.asmi2_qspi_interface_0 -pg 1
+preplace inst NIOS.NIOS.reset_bridge -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.clk_bridge -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.csr_controller -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl -pg 1
+preplace inst NIOS.NIOS.cpu -pg 1
+preplace inst NIOS.NIOS -pg 1 -lvl 2 -y 380
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.asmi2_cmd_generator_0 -pg 1
+preplace inst NIOS.EPCQ -pg 1 -lvl 3 -y 160
+preplace inst NIOS.LED -pg 1 -lvl 3 -y 300
+preplace inst NIOS.EPCQ.addr_adaption_0 -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.merlin_demultiplexer_0 -pg 1
+preplace inst NIOS.CLK -pg 1 -lvl 1 -y 400
+preplace inst NIOS.RAM -pg 1 -lvl 3 -y 400
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.reset_bridge -pg 1
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.multiplexer -pg 1
+preplace inst NIOS -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst NIOS.NIOS.clock_bridge -pg 1
+preplace inst NIOS.DEBUG -pg 1 -lvl 3 -y 30
+preplace inst NIOS.EPCQ.asmi2_inst_epcq_ctrl.xip_controller -pg 1
+preplace inst NIOS.EPCQ.reset -pg 1
+preplace netloc FAN_OUT<net_container>NIOS</net_container>(MASTER)NIOS.irq,(SLAVE)DEBUG.irq,(SLAVE)EPCQ.interrupt_sender) 1 2 1 760
+preplace netloc FAN_OUT<net_container>NIOS</net_container>(MASTER)CLK.clk_reset,(SLAVE)LED.reset,(SLAVE)RAM.reset1,(SLAVE)NIOS.reset,(SLAVE)EPCQ.reset,(SLAVE)DEBUG.reset) 1 1 2 300 540 780
+preplace netloc FAN_OUT<net_container>NIOS</net_container>(SLAVE)RAM.clk1,(SLAVE)LED.clk,(SLAVE)NIOS.clk,(MASTER)CLK.clk,(SLAVE)EPCQ.clock_sink,(SLAVE)DEBUG.clk) 1 1 2 320 520 740
+preplace netloc EXPORT<net_container>NIOS</net_container>(SLAVE)NIOS.reset,(SLAVE)CLK.clk_in_reset) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>NIOS</net_container>(SLAVE)EPCQ.avl_mem,(SLAVE)LED.s1,(SLAVE)RAM.s1,(MASTER)NIOS.data_master,(SLAVE)EPCQ.avl_csr,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)NIOS.debug_mem_slave,(MASTER)NIOS.instruction_master) 1 1 2 340 560 720
+preplace netloc EXPORT<net_container>NIOS</net_container>(SLAVE)LED.external_connection,(SLAVE)NIOS.pio_external) 1 0 3 NJ 320 NJ 320 NJ
+preplace netloc EXPORT<net_container>NIOS</net_container>(SLAVE)CLK.clk_in,(SLAVE)NIOS.clk) 1 0 1 NJ
+levelinfo -pg 1 0 90 1060
+levelinfo -hier NIOS 100 130 460 900 1050

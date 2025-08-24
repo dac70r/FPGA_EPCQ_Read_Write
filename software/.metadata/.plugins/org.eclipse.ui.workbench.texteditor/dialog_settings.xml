@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="alt_epcq_controller2_lock" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="subsector"/>
+			<item value="epcq_dev_ptr"/>
+			<item value="define"/>
+			<item value="altera_epcq_controller2_avl_mem_avl_csr_instance"/>
+			<item value="altera_epcq_controller2"/>
+			<item value="EPCQ"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="353" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="513" key="DIALOG_HEIGHT"/>
+		<item value="974" key="DIALOG_X_ORIGIN"/>
+		<item value="506" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Aug 21 15:37:22 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : fpga_epcq_controller
+Top-level Entity Name : fpga_epcq_controller
+Family : Cyclone 10 LP
+Device : 10CL025YU256I7G
+Timing Models : Final
+Total logic elements : 3,021 / 24,624 ( 12 % )
+    Total combinational functions : 2,667 / 24,624 ( 11 % )
+    Dedicated logic registers : 1,738 / 24,624 ( 7 % )
+Total registers : 1738
+Total pins : 6 / 151 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 339,008 / 608,256 ( 56 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

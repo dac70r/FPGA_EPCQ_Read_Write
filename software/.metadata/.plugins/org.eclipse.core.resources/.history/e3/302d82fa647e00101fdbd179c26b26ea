@@ -1,0 +1,25 @@
+
+#include "sys/alt_stdio.h"
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
+#include "stdint.h"
+
+int main()
+{ 
+  alt_putstr("Hello from Nios II!\n");
+  uint8_t on_off = 1;
+
+  /* Event loop never exits. */
+  while (1){
+
+	  IOWR(LED_BASE, 0, on_off);
+	  on_off = ~on_off;
+	  alt_busy_sleep(1000000);
+
+	  IOWR_32DIRECT(EPCQ_AVL_MEM_BASE, 0x200, 0x6465);
+	  uint32_t dennis = IORD_32DIRECT(EPCQ_AVL_MEM_BASE, 0x200);
+	  printf("%08X ", dennis);
+  };
+
+  return 0;
+}

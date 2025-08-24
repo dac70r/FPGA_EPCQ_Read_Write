@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED1",
+					"strict" : false
+				},
+				{
+					"name" : "NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_asmi2_qspi_interface_0:asmi2_qspi_interface_0|altera_asmi2_qspi_interface_asmiblock:dedicated_interface|dut_asmiblock~ALTERA_DCLK",
+					"strict" : false
+				},
+				{
+					"name" : "NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_asmi2_qspi_interface_0:asmi2_qspi_interface_0|altera_asmi2_qspi_interface_asmiblock:dedicated_interface|dut_asmiblock~ALTERA_SCE",
+					"strict" : false
+				},
+				{
+					"name" : "NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_asmi2_qspi_interface_0:asmi2_qspi_interface_0|altera_asmi2_qspi_interface_asmiblock:dedicated_interface|dut_asmiblock~ALTERA_SDO",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_asmi2_qspi_interface_0:asmi2_qspi_interface_0|altera_asmi2_qspi_interface_asmiblock:dedicated_interface|dut_asmiblock~ALTERA_DATA0",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

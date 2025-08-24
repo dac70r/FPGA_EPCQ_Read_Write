@@ -1,0 +1,49 @@
+
+State Machine - |fpga_epcq_controller|NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_asmi2_qspi_interface_0:asmi2_qspi_interface_0|current_state
+Name current_state.STATE_COMPLETE current_state.STATE_PRE_COMPLETE current_state.STATE_LOAD_RDATA current_state.STATE_RDATA current_state.STATE_SWITCH_OE current_state.STATE_DUMMY_CLK current_state.STATE_LOAD_DATA current_state.STATE_WDATA current_state.STATE_FIRST_DATA current_state.STATE_OPCODE current_state.STATE_IDLE 
+current_state.STATE_IDLE 0 0 0 0 0 0 0 0 0 0 0 
+current_state.STATE_OPCODE 0 0 0 0 0 0 0 0 0 1 1 
+current_state.STATE_FIRST_DATA 0 0 0 0 0 0 0 0 1 0 1 
+current_state.STATE_WDATA 0 0 0 0 0 0 0 1 0 0 1 
+current_state.STATE_LOAD_DATA 0 0 0 0 0 0 1 0 0 0 1 
+current_state.STATE_DUMMY_CLK 0 0 0 0 0 1 0 0 0 0 1 
+current_state.STATE_SWITCH_OE 0 0 0 0 1 0 0 0 0 0 1 
+current_state.STATE_RDATA 0 0 0 1 0 0 0 0 0 0 1 
+current_state.STATE_LOAD_RDATA 0 0 1 0 0 0 0 0 0 0 1 
+current_state.STATE_PRE_COMPLETE 0 1 0 0 0 0 0 0 0 0 1 
+current_state.STATE_COMPLETE 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |fpga_epcq_controller|NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|altera_asmi2_cmd_generator:asmi2_cmd_generator_0|state
+Name state.ST_COMPLETE state.ST_SEND_DUMMY_RSP state.ST_WAIT_BUFFER state.ST_WAIT_RSP state.ST_SEND_DATA state.ST_SEND_ADDR state.ST_SEND_OPCODE state.ST_IDLE 
+state.ST_IDLE 0 0 0 0 0 0 0 0 
+state.ST_SEND_OPCODE 0 0 0 0 0 0 1 1 
+state.ST_SEND_ADDR 0 0 0 0 0 1 0 1 
+state.ST_SEND_DATA 0 0 0 0 1 0 0 1 
+state.ST_WAIT_RSP 0 0 0 1 0 0 0 1 
+state.ST_WAIT_BUFFER 0 0 1 0 0 0 0 1 
+state.ST_SEND_DUMMY_RSP 0 1 0 0 0 0 0 1 
+state.ST_COMPLETE 1 0 0 0 0 0 0 1 
+
+State Machine - |fpga_epcq_controller|NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|altera_asmi2_xip_controller:xip_controller|current_state
+Name current_state.STATE_COMPLETE current_state.STATE_READ_DATA current_state.STATE_READ_CMD current_state.STATE_READ_NVCR_RSP current_state.STATE_READ_NVCR_CMD current_state.STATE_POLL_RSP current_state.STATE_POLL_CMD current_state.STATE_WR_DATA current_state.STATE_WR_CMD current_state.STATE_WRENABLE_RSP current_state.STATE_WRENABLE_CMD current_state.STATE_STATUS_RSP current_state.STATE_STATUS_CMD current_state.STATE_IDLE 
+current_state.STATE_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.STATE_STATUS_CMD 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.STATE_STATUS_RSP 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.STATE_WRENABLE_CMD 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.STATE_WRENABLE_RSP 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.STATE_WR_CMD 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.STATE_WR_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.STATE_POLL_CMD 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.STATE_POLL_RSP 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.STATE_READ_NVCR_CMD 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.STATE_READ_NVCR_RSP 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.STATE_READ_CMD 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+current_state.STATE_READ_DATA 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.STATE_COMPLETE 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |fpga_epcq_controller|NIOS:inst|NIOS_EPCQ:epcq|NIOS_EPCQ_asmi2_inst_epcq_ctrl:asmi2_inst_epcq_ctrl|NIOS_EPCQ_asmi2_inst_epcq_ctrl_csr_controller:csr_controller|state
+Name state.ST_WAIT_RSP state.ST_SEND_DATA state.ST_SEND_HEADER state.ST_IDLE 
+state.ST_IDLE 0 0 0 0 
+state.ST_SEND_HEADER 0 0 1 1 
+state.ST_SEND_DATA 0 1 0 1 
+state.ST_WAIT_RSP 1 0 0 1 
