@@ -1,0 +1,51 @@
+/*
+ * Library for EPCQ Memory Management
+ *
+ * Author: Dennis Wong Guan Ming
+ * Date: 25/8/2025
+ *
+ * EPCQ128A = 256 Sectors -> 16 Sub-sectors -> 4096 Bytes/ Sub-sector
+ * 			= 256 * 16 * 4096 Bytes = 16.384 KiloBytes
+ *
+ *
+ * */
+#ifndef PERIPHERAL_LINKER_H		// if peripheral_linker.h is not defined
+#define PERIPHERAL_LINKER_H
+
+#include "sys/alt_sys_init.h"
+#include "altera_epcq_controller2.h"
+#include "stdint.h"
+
+#define NO_OF_SECTORS 4096		// EPCQ128A
+
+// Flash Handler here is "epcq_dev_ptr -> refer to alt_sys_init.c (user defined data)
+extern alt_epcq_controller2_dev *epcq_dev_ptr;							// External pointer to the EPCQ device
+extern uint8_t subsector_buffer[4096];
+extern int mem_read_offset;
+extern int erase_offset;
+extern int length;
+
+void print_read_epcq_mem(uint8_t *subsector_buffer_array, int mem_read_offset, int sizeof_subesector_buffer);
+
+uint8_t erase_epcq_sector(int erase_offset);
+
+uint8_t erase_epcq_all_sector(void );
+
+#endif /* PERIPHERAL_LINKER_H */
+
+
+/*
+ * USER DEFINED DATA FOR alt_sys_init.c
+ *
+ * Insert if not found
+ *
+ * Author: Dennis Wong Guan Ming Date: 23/8/2025
+ *
+ * EPCQ - the flash handle
+ *
+ * We create a pointer to this handle so that we can use this in main program
+ *
+ */
+
+// Define and initialize the pointer to that static instance
+// alt_epcq_controller2_dev *epcq_dev_ptr = &EPCQ;

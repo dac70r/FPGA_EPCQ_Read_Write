@@ -3,8 +3,8 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Ign)
-		Device PartName(10CL025Y) MfrSpec(OpMask(0) SEC_Device(EPCQ128A) Child_OpMask(1 0) FullPath("C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/output_files/inspection_my.jic"));
+	P ActionCode(Cfg)
+		Device PartName(10CL025Y) Path("C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/output_files/") File("inspection_my.jic") MfrSpec(OpMask(1) SEC_Device(EPCQ128A) Child_OpMask(1 3));
 
 ChainEnd;
 

@@ -140,7 +140,7 @@
     <sld_info hpath="NIOS:inst" name="inst">
       <assignment_values>
         <assignment_value text="QSYS_NAME NIOS HAS_SOPCINFO 1 GENERATION_ID 1755761014"/>
-        <assignment_value text="QSYS_NAME NIOS HAS_SOPCINFO 1 GENERATION_ID 1755761780"/>
+        <assignment_value text="QSYS_NAME NIOS HAS_SOPCINFO 1 GENERATION_ID 1756114267"/>
       </assignment_values>
       <parameters/>
     </sld_info>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="NIOS" kind="NIOS" version="1.0" fabric="QSYS">
  <!-- Format version 23.1 993 (Future versions may contain additional information.) -->
- <!-- 2025.08.21.15:36:21 -->
+ <!-- 2025.08.25.17:31:07 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1755761780</value>
+  <value>1756114267</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

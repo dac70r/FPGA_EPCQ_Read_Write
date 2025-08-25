@@ -3,72 +3,76 @@
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
 #include "stdint.h"
-#include "altera_epcq_controller2.h"
 #include "sys/alt_sys_init.h"
 #include "sys/alt_flash.h"
 #include "peripheral/peripheral_linker.h"
 
-// External pointer to the EPCQ device
-// TODO Add this to a library for flash memory manipulation purposes
-extern alt_epcq_controller2_dev *epcq_dev_ptr;
+uint8_t on_off = 1;		// For Toggling the LED
 
 int main()
 { 
-  alt_putstr("Hello from Nios II!\n");
-  uint8_t on_off = 1;
-  uint8_t buffer[256];
-  int offset = 0x0000;
-  int erase_offset = 0x000000;
-  int length = sizeof(buffer);
+  alt_putstr("------- Welcome to EPCQ Read/ Write Programme! -------\n");
+  alt_putstr("Please refer to the memory range for your EPCQ Device\n");
 
-  /* Flash Erase-Write Operation Located Outside Event Loop to Prevent Excessive Flash Usage which leads to Premature Degradation */
-
-  //Function protoype for read flash - int alt_epcq_controller2_read(alt_flash_dev *flash_info, int offset, void *dest_addr, int length);
-  // Flash Handler here is "epcq_dev_ptr -> refer to alt_sys_init.c (user defined data)
-  uint8_t result = alt_epcq_controller2_read(&epcq_dev_ptr->dev, offset, buffer, length);
-
-  if(result == 0) {
+  // Reads First Sub-sector And Prints In Console
+  if(alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length) == 0) {
 	  printf("Read successful!\n");
-	  for (int i = 0; i < length - offset; i++) {
-		  printf("%02X ", buffer[i]);
-		  if ((i + 1) % 16 == 0) printf("\n");
-	  }
+	  print_read_epcq_mem(subsector_buffer, mem_read_offset, length);
   } else {
-	  printf("Read failed with error code: %d\n", result);
+	  printf("Read failed!\n");
   }
 
-  result = alt_epcq_controller2_erase_block(&epcq_dev_ptr->dev, erase_offset);
+  // Checks if "dennis" is detected, if so erase memory, else write "dennis"
+  if (IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000) == 0x64 \
+		  && IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000001) == 0x65 \
+		  && IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000002) == 0x6E \
+		  && IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000003) == 0x6E \
+		  && IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000004) == 0x69 \
+		  && IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000005) == 0x73 ){
+
+	  if(erase_epcq_sector(0x000000) == 0) {
+		  printf("Erase successful!\n");
+	  } else {
+		  printf("Erase failed!\n");
+	  }
+  }
+  else{
+	  /* A Very Simple and Crude Method to Write Information into EPCQ Memory */
+	  // At the offset from Base Address, Write the Value into Flash, provided the location has not been written before
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 0, 0x64); // d
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 1, 0x65); // e
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 2, 0x6E); // n
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 3, 0x6E); // n
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 4, 0x69); // i
+		IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 5, 0x73); // s
+  }
+
+  // Reads First Sub-sector And Prints In Console
+  if(alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length) == 0) {
+	  printf("Read successful!\n");
+	  print_read_epcq_mem(subsector_buffer, mem_read_offset, length);
+  } else {
+	  printf("Read failed!\n");
+  }
+
+  // Performs a Complete Erase of the EPCQ Memory
+  IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x120000, 0x73); // s
+  uint8_t buffer[10];
+  alt_epcq_controller2_read(&epcq_dev_ptr->dev, 0x120000, buffer, sizeof(buffer));
+  printf("0x%02X", buffer[0]);
+
+  if(erase_epcq_all_sector() == 0 )
+	  printf("Erased all EPCQ Sectors\n");
+  else
+	  printf("Erase all EPCQ Sectors Failed\n");
 
   /* Event loop never exits. */
   while (1){
-
-	  printf("-------------------start of sector 0-------------------------------");
-	  for (int i = 0; i < 0x0010000; i++) {
-		uint8_t data = IORD_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + i);
-		printf("%02X ", data);
-		//IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + i, data+1);
-		if ((i+1)%16==0) printf("\n");
-	  printf("---------------------end of sector 0-------------------------------");
-	}
+		IOWR(LED_BASE, 0, on_off);
+		on_off = ~on_off;
+		alt_busy_sleep(1000000);
   }
 
   return 0;
 }
 
-// Sanity Check: LED is Blinking
-/*
-	IOWR(LED_BASE, 0, on_off);
-	on_off = ~on_off;
-	alt_busy_sleep(1000000);
-*/
-
-/* A Very Simple and Crude Method to Write Information into EPCQ Memory */
-// At the offset from Base Address, Write the Value into Flash, provided the location has not been written before
-/*
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 0, 0x64); // d
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 1, 0x65); // e
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 2, 0x6E); // n
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 3, 0x6E); // n
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 4, 0x69); // i
-	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 5, 0x73); // s
-*/

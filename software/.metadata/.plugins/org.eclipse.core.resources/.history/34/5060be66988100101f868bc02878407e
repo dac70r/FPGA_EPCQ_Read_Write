@@ -1,0 +1,68 @@
+
+#include "peripheral_linker.h"
+
+ uint8_t subsector_buffer[4096]; 									// Define buffer to store data for a single sector
+ int mem_read_offset = 0x0000;											// Selects the Sub-sector to Read
+ int  erase_offset = 0x000000;												// Selects the Sector to Erase (Only Erases a Single Sector)
+ int length = sizeof(subsector_buffer);
+
+/**
+ * @brief Reads the Memory Contents Read back from the EPCQ of the FPGA
+ *
+ * @param subsector_buffer_array	- This pointer points to the buffer array storing the Read back data from EPCQ
+ * @param mem_read_offset			- Offset on the BASE Address of the EPCQ memory (e.g. Offset = 0x000001 means read from the second data of the EPCQ)
+ * @param sizeof_subsector_buffer	- Size of the EPCQ Buffer
+ *
+ * @return N/A
+ *
+ */
+
+void print_read_epcq_mem(uint8_t *subsector_buffer_array, int mem_read_offset, int sizeof_subesector_buffer){
+	for (int i = 0; i < sizeof_subesector_buffer - mem_read_offset; i++) {
+		printf("%02X ", subsector_buffer_array[i]);
+		if ((i + 1) % 16 == 0) printf("\n");
+	}
+
+}
+
+/**
+ * @brief Erases a sector of the EPCQ memory based on the OFFSET
+ *
+ * @param erase_offset				- Offset on the BASE Address of the EPCQ memory (e.g. Offset = 0x000001 means read from the second data of the EPCQ)
+ *
+ * @return 0: Erase Success, 9: Erase Failed.
+ *
+ */
+
+uint8_t erase_epcq_sector(int erase_offset){
+
+	if (alt_epcq_controller2_erase_block(&epcq_dev_ptr->dev, erase_offset) == 0){
+		return 0;
+	}
+	else
+		return 9;
+}
+
+/**
+ * @brief Erases the entire EPCQ Memory
+ *
+ * @param N/A
+ *
+ * @return 0: Erase Success, 9: Erase Failed.
+ *
+ */
+
+uint8_t erase_epcq_all_sector(void ){
+
+	uint8_t response = 0;
+	for (uint32_t addr = 0x000000; addr <= 0xFF0000; addr += 0x10000) {
+	    response = alt_epcq_controller2_erase_block(&epcq_dev_ptr->dev, addr);
+	    if (response != 0) {
+	        printf("Erase failed at address 0x%06X\n", addr);
+	        break;
+	    }
+	}
+	return 0;
+}
+
+

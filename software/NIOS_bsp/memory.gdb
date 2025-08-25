@@ -3,7 +3,7 @@
 # Machine generated for CPU 'NIOS' in SOPC Builder design 'NIOS'
 # SOPC Builder design path: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/NIOS.sopcinfo
 #
-# Generated: Thu Aug 21 15:38:42 SGT 2025
+# Generated: Mon Aug 25 17:33:45 SGT 2025
 
 # DO NOT MODIFY THIS FILE
 #

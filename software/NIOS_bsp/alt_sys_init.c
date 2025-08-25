@@ -4,7 +4,7 @@
  * Machine generated for CPU 'NIOS' in SOPC Builder design 'NIOS'
  * SOPC Builder design path: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/NIOS.sopcinfo
  *
- * Generated: Thu Aug 21 15:38:42 SGT 2025
+ * Generated: Mon Aug 25 17:33:45 SGT 2025
  */
 
 /*
@@ -71,23 +71,20 @@ ALTERA_AVALON_JTAG_UART_INSTANCE ( DEBUG, DEBUG);
 ALTERA_EPCQ_CONTROLLER2_AVL_MEM_AVL_CSR_INSTANCE ( EPCQ, EPCQ_AVL_MEM, EPCQ_AVL_CSR, EPCQ);
 
 /*
+ * USER DEFINED DATA FOR alt_sys_init.c
  *
+ * Insert if not found
  *
- *
- *
- *
- * USER DEFINED DATA - Author: Dennis Wong Guan Ming Date: 23/8/2025
+ * Author: Dennis Wong Guan Ming Date: 23/8/2025
  *
  * EPCQ - the flash handle
  *
  * We create a pointer to this handle so that we can use this in main program
  *
- *
- *
- * */
+ */
+
 // Define and initialize the pointer to that static instance
 alt_epcq_controller2_dev *epcq_dev_ptr = &EPCQ;
-
 
 /*
  * Initialize the interrupt controller devices
