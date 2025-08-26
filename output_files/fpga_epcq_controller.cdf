@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10CL025Y) Path("C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/output_files/") File("inspection_my.jic") MfrSpec(OpMask(1) SEC_Device(EPCQ128A) Child_OpMask(1 3));
+		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/output_files/") File("fpga_epcq_controller.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

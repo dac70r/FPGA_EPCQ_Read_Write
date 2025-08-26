@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpga_epcq_controller
-Mon Aug 25 17:32:13 2025
+Tue Aug 26 13:29:19 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -231,7 +231,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 25 17:32:13 2025          ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 26 13:29:19 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; fpga_epcq_controller                           ;
 ; Top-level Entity Name              ; fpga_epcq_controller                           ;
@@ -342,14 +342,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -5821,7 +5821,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -5831,44 +5831,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Aug 25 17:30:43 2025
+    Info: Processing started: Tue Aug 26 13:28:19 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpga_epcq_controller -c fpga_epcq_controller
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "NIOS.qsys"
-Info (12250): 2025.08.25.17:30:56 Progress: Loading Platform_Designer/NIOS.qsys
-Info (12250): 2025.08.25.17:30:57 Progress: Reading input file
-Info (12250): 2025.08.25.17:30:57 Progress: Adding CLK [clock_source 23.1]
-Info (12250): 2025.08.25.17:30:58 Progress: Parameterizing module CLK
-Info (12250): 2025.08.25.17:30:58 Progress: Adding DEBUG [altera_avalon_jtag_uart 23.1]
-Info (12250): 2025.08.25.17:30:58 Progress: Parameterizing module DEBUG
-Info (12250): 2025.08.25.17:30:58 Progress: Adding EPCQ [altera_epcq_controller2 23.1]
-Info (12250): 2025.08.25.17:30:58 Progress: Parameterizing module EPCQ
-Info (12250): 2025.08.25.17:30:58 Progress: Adding LED [altera_avalon_pio 23.1]
-Info (12250): 2025.08.25.17:30:58 Progress: Parameterizing module LED
-Info (12250): 2025.08.25.17:30:58 Progress: Adding NIOS [altera_nios2_gen2 23.1]
-Info (12250): 2025.08.25.17:30:59 Progress: Parameterizing module NIOS
-Info (12250): 2025.08.25.17:30:59 Progress: Adding RAM [altera_avalon_onchip_memory2 23.1]
-Info (12250): 2025.08.25.17:30:59 Progress: Parameterizing module RAM
-Info (12250): 2025.08.25.17:30:59 Progress: Building connections
-Info (12250): 2025.08.25.17:30:59 Progress: Parameterizing connections
-Info (12250): 2025.08.25.17:30:59 Progress: Validating
-Info (12250): 2025.08.25.17:31:04 Progress: Done reading input file
+Info (12250): 2025.08.26.13:28:30 Progress: Loading Platform_Designer/NIOS.qsys
+Info (12250): 2025.08.26.13:28:31 Progress: Reading input file
+Info (12250): 2025.08.26.13:28:31 Progress: Adding CLK [clock_source 23.1]
+Info (12250): 2025.08.26.13:28:31 Progress: Parameterizing module CLK
+Info (12250): 2025.08.26.13:28:31 Progress: Adding DEBUG [altera_avalon_jtag_uart 23.1]
+Info (12250): 2025.08.26.13:28:31 Progress: Parameterizing module DEBUG
+Info (12250): 2025.08.26.13:28:31 Progress: Adding EPCQ [altera_epcq_controller2 23.1]
+Info (12250): 2025.08.26.13:28:31 Progress: Parameterizing module EPCQ
+Info (12250): 2025.08.26.13:28:31 Progress: Adding LED [altera_avalon_pio 23.1]
+Info (12250): 2025.08.26.13:28:31 Progress: Parameterizing module LED
+Info (12250): 2025.08.26.13:28:31 Progress: Adding NIOS [altera_nios2_gen2 23.1]
+Info (12250): 2025.08.26.13:28:32 Progress: Parameterizing module NIOS
+Info (12250): 2025.08.26.13:28:32 Progress: Adding RAM [altera_avalon_onchip_memory2 23.1]
+Info (12250): 2025.08.26.13:28:32 Progress: Parameterizing module RAM
+Info (12250): 2025.08.26.13:28:32 Progress: Building connections
+Info (12250): 2025.08.26.13:28:32 Progress: Parameterizing connections
+Info (12250): 2025.08.26.13:28:32 Progress: Validating
+Info (12250): 2025.08.26.13:28:34 Progress: Done reading input file
 Info (12250): NIOS.DEBUG: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Warning (12251): NIOS.NIOS: Nios II cores are not recommended for new projects and are subject to removal in a future release. Nios V cores are the recommended replacement as applicable.
 Info (12250): NIOS: Generating NIOS "NIOS" for QUARTUS_SYNTH
 Info (12250): DEBUG: Starting RTL generation for module 'NIOS_DEBUG'
-Info (12250): DEBUG:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=NIOS_DEBUG --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0002_DEBUG_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0002_DEBUG_gen//NIOS_DEBUG_component_configuration.pl --do_build_sim=0}]
+Info (12250): DEBUG:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=NIOS_DEBUG --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0002_DEBUG_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0002_DEBUG_gen//NIOS_DEBUG_component_configuration.pl --do_build_sim=0}]
 Info (12250): DEBUG: Done RTL generation for module 'NIOS_DEBUG'
 Info (12250): DEBUG: "NIOS" instantiated altera_avalon_jtag_uart "DEBUG"
 Info (12250): EPCQ: "NIOS" instantiated altera_epcq_controller2 "EPCQ"
 Info (12250): LED: Starting RTL generation for module 'NIOS_LED'
-Info (12250): LED:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_LED --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0003_LED_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0003_LED_gen//NIOS_LED_component_configuration.pl --do_build_sim=0}]
+Info (12250): LED:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NIOS_LED --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0003_LED_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0003_LED_gen//NIOS_LED_component_configuration.pl --do_build_sim=0}]
 Info (12250): LED: Done RTL generation for module 'NIOS_LED'
 Info (12250): LED: "NIOS" instantiated altera_avalon_pio "LED"
 Info (12250): NIOS: "NIOS" instantiated altera_nios2_gen2 "NIOS"
 Info (12250): RAM: Starting RTL generation for module 'NIOS_RAM'
-Info (12250): RAM:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=NIOS_RAM --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0004_RAM_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0004_RAM_gen//NIOS_RAM_component_configuration.pl --do_build_sim=0}]
+Info (12250): RAM:   Generation command is [exec cmd /c {set LC_ALL=C&& C:/intelfpga_lite/23.1std/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/23.1std/quartus/bin64/perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=NIOS_RAM --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0004_RAM_gen/ --quartus_dir=C:/intelfpga_lite/23.1std/quartus --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0004_RAM_gen//NIOS_RAM_component_configuration.pl --do_build_sim=0}]
 Info (12250): RAM: Done RTL generation for module 'NIOS_RAM'
 Info (12250): RAM: "NIOS" instantiated altera_avalon_onchip_memory2 "RAM"
 Info (12250): Avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -5883,13 +5883,13 @@ Info (12250): Rst_controller: "NIOS" instantiated altera_reset_controller "rst_c
 Info (12250): Asmi2_inst_epcq_ctrl: "EPCQ" instantiated altera_asmi_parallel2 "asmi2_inst_epcq_ctrl"
 Info (12250): Addr_adaption_0: "EPCQ" instantiated altera_qspi_address_adaption "addr_adaption_0"
 Info (12250): Cpu: Starting RTL generation for module 'NIOS_NIOS_cpu'
-Info (12250): Cpu:   Generation command is [exec C:/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=NIOS_NIOS_cpu --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0008_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0325_4759274282549430108.dir/0008_cpu_gen//NIOS_NIOS_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info (12250): Cpu: # 2025.08.25 17:31:41 (*) Starting Nios II generation
-Info (12250): Cpu: # 2025.08.25 17:31:41 (*)   Elaborating CPU configuration settings
-Info (12250): Cpu: # 2025.08.25 17:31:41 (*)   Creating all objects for CPU
-Info (12250): Cpu: # 2025.08.25 17:31:42 (*)   Generating RTL from CPU objects
-Info (12250): Cpu: # 2025.08.25 17:31:42 (*)   Creating plain-text RTL
-Info (12250): Cpu: # 2025.08.25 17:31:42 (*) Done Nios II generation
+Info (12250): Cpu:   Generation command is [exec C:/intelFPGA_lite/23.1std/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/23.1std/quartus/bin64//perl/lib -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/23.1std/quartus/sopc_builder/bin -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/23.1std/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=NIOS_NIOS_cpu --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0008_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/23.1std/quartus/bin64/ --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt0326_2606470721919203884.dir/0008_cpu_gen//NIOS_NIOS_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info (12250): Cpu: # 2025.08.26 13:28:54 (*) Starting Nios II generation
+Info (12250): Cpu: # 2025.08.26 13:28:54 (*)   Elaborating CPU configuration settings
+Info (12250): Cpu: # 2025.08.26 13:28:54 (*)   Creating all objects for CPU
+Info (12250): Cpu: # 2025.08.26 13:28:54 (*)   Generating RTL from CPU objects
+Info (12250): Cpu: # 2025.08.26 13:28:54 (*)   Creating plain-text RTL
+Info (12250): Cpu: # 2025.08.26 13:28:55 (*) Done Nios II generation
 Info (12250): Cpu: Done RTL generation for module 'NIOS_NIOS_cpu'
 Info (12250): Cpu: "NIOS" instantiated altera_nios2_gen2_unit "cpu"
 Info (12250): NIOS_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "NIOS_data_master_translator"
@@ -6496,7 +6496,7 @@ Info (12128): Elaborating entity "NIOS_mm_interconnect_0_avalon_st_adapter_error
 Info (12128): Elaborating entity "NIOS_irq_mapper" for hierarchy "NIOS:inst|NIOS_irq_mapper:irq_mapper" File: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/Platform_Designer/NIOS/synthesis/NIOS.v Line: 236
 Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "NIOS:inst|altera_reset_controller:rst_controller" File: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/Platform_Designer/NIOS/synthesis/NIOS.v Line: 299
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.08.25.17:31:54 Progress: Loading sldf5630396/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.08.26.13:29:05 Progress: Loading sldf5630396/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -6572,9 +6572,9 @@ Info (21057): Implemented 3586 device resources after synthesis - the final reso
     Info (21064): Implemented 177 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 114 warnings
     Info: Peak virtual memory: 4941 megabytes
-    Info: Processing ended: Mon Aug 25 17:32:13 2025
-    Info: Elapsed time: 00:01:30
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Processing ended: Tue Aug 26 13:29:19 2025
+    Info: Elapsed time: 00:01:00
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+

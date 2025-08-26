@@ -1,10 +1,25 @@
+/*
+ * Library for EPCQ Memory Management .c file
+ *
+ * Author: Dennis Wong Guan Ming
+ * Date: 25/8/2025
+ *
+ * EPCQ128A = 256 Sectors -> 16 Sub-sectors -> 4096 Bytes/ Sub-sector
+ * 			= 256 * 16 * 4096 Bytes = 16.384 KiloBytes
+ *
+ *
+ * */
 
 #include "peripheral_linker.h"
 
+
+// Variable Declaration
  uint8_t subsector_buffer[4096]; 									// Define buffer to store data for a single sector
  int mem_read_offset = 0x0000;											// Selects the Sub-sector to Read
  int  erase_offset = 0x000000;												// Selects the Sector to Erase (Only Erases a Single Sector)
  int length = sizeof(subsector_buffer);
+
+// Function Definition
 
 /**
  * @brief Reads the Memory Contents Read back from the EPCQ of the FPGA
@@ -64,5 +79,76 @@ uint8_t erase_epcq_all_sector(void ){
 	}
 	return 0;
 }
+
+/**
+ * @brief Reads First Sub-sector And Prints In Console
+ *
+ * @param N/A
+ *
+ * @return N/A
+ *
+ */
+
+void epcq_controller_sanity_check(void ){
+
+	if(alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length) == 0) {
+			  printf("Read successful!\n");
+			  print_read_epcq_mem(subsector_buffer, mem_read_offset, length);
+		  } else {
+			  printf("Read failed!\n");
+		  }
+
+		  // Checks if "dennis" is detected, if so erase memory, else write "dennis"
+		  if (IORD_8DIRECT(EPCQ_CONTROLLER, 0x000000) == 0x64 \
+				  && IORD_8DIRECT(EPCQ_CONTROLLER, 0x000001) == 0x65 \
+				  && IORD_8DIRECT(EPCQ_CONTROLLER, 0x000002) == 0x6E \
+				  && IORD_8DIRECT(EPCQ_CONTROLLER, 0x000003) == 0x6E \
+				  && IORD_8DIRECT(EPCQ_CONTROLLER, 0x000004) == 0x69 \
+				  && IORD_8DIRECT(EPCQ_CONTROLLER, 0x000005) == 0x73 ){
+
+			  if(erase_epcq_sector(0x000000) == 0) {
+				  printf("Erase successful!\n");
+			  } else {
+				  printf("Erase failed!\n");
+			  }
+		  }
+		  else{
+			  /* A Very Simple and Crude Method to Write Information into EPCQ Memory */
+			  // At the offset from Base Address, Write the Value into Flash, provided the location has not been written before
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 0, 0x64); // d
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 1, 0x65); // e
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 2, 0x6E); // n
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 3, 0x6E); // n
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 4, 0x69); // i
+				IOWR_8DIRECT(EPCQ_CONTROLLER, 0x000000 + 5, 0x73); // s
+		  }
+
+		  // Reads First Sub-sector And Prints In Console
+		  if(alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length) == 0) {
+			  printf("Read successful!\n");
+			  print_read_epcq_mem(subsector_buffer, mem_read_offset, length);
+		  } else {
+			  printf("Read failed!\n");
+		  }
+
+		  // Performs a Complete Erase of the EPCQ Memory
+		  if(erase_epcq_all_sector() == 0 )
+			  printf("Erased all EPCQ Sectors\n");
+		  else
+			  printf("Erase all EPCQ Sectors Failed\n");
+
+}
+
+
+/* A Very Simple and Crude Method to Write Information into EPCQ Memory */
+// At the offset from Base Address, Write the Value into Flash, provided the location has not been written before
+/*
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 0, 0x64); // d
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 1, 0x65); // e
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 2, 0x6E); // n
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 3, 0x6E); // n
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 4, 0x69); // i
+	IOWR_8DIRECT(EPCQ_AVL_MEM_BASE, 0x000000 + 5, 0x73); // s
+*/
 
 

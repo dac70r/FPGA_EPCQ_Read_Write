@@ -1,18 +1,9 @@
-17:47:36 **** Build of configuration Nios II for project NIOS ****
-wsl make mem_init_generate 
+13:46:59 **** Incremental Build of configuration Nios II for project NIOS ****
+wsl make all 
 Info: Building /mnt/c/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/
 make --no-print-directory -C /mnt/c/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/
 [BSP build complete]
-Post-processing to create mem_init/EPCQ.hex...
-elf2hex.exe NIOS.elf 0x00000000 0x00ffffff --width=8 --little-endian-mem --create-lanes=0 mem_init/EPCQ.hex
-Post-processing to create mem_init/onchip_mem.hex...
-elf2hex.exe NIOS.elf 0x01010000 0x01019fff --width=32 --little-endian-mem --create-lanes=0 mem_init/onchip_mem.hex
-Post-processing to create mem_init/hdl_sim/onchip_mem.dat...
-elf2dat --infile=NIOS.elf --outfile=mem_init/hdl_sim/onchip_mem.dat \
-	--base=0x01010000 --end=0x01019fff --width=32 \
-	--little-endian-mem --create-lanes=0 
-Post-processing to create mem_init/hdl_sim/onchip_mem.sym...
-nios2-elf-nm.exe -n NIOS.elf > mem_init/hdl_sim/onchip_mem.sym
+[NIOS build complete]
 
-17:47:42 Build Finished (took 5s.316ms)
+13:47:00 Build Finished (took 1s.170ms)
 

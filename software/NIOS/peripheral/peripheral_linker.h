@@ -1,5 +1,5 @@
 /*
- * Library for EPCQ Memory Management
+ * Library for EPCQ Memory Management .h file
  *
  * Author: Dennis Wong Guan Ming
  * Date: 25/8/2025
@@ -9,14 +9,18 @@
  *
  *
  * */
-#ifndef PERIPHERAL_LINKER_H		// if peripheral_linker.h is not defined
-#define PERIPHERAL_LINKER_H
 
-#include "sys/alt_sys_init.h"
-#include "altera_epcq_controller2.h"
+#ifndef PERIPHERAL_LINKER_H_
+#define PERIPHERAL_LINKER_H_
+
 #include "stdint.h"
+#include "system.h"
+#include "sys/alt_sys_init.h"
+#include "altera_avalon_pio_regs.h"
+#include "altera_epcq_controller2.h"
 
-#define NO_OF_SECTORS 256		// EPCQ128A
+#define EPCQ_CONTROLLER				EPCQ_AVL_MEM_BASE						// from system.h
+#define NO_OF_SECTORS 				256										// EPCQ128A
 
 // Flash Handler here is "epcq_dev_ptr -> refer to alt_sys_init.c (user defined data)
 extern alt_epcq_controller2_dev *epcq_dev_ptr;							// External pointer to the EPCQ device
@@ -31,8 +35,10 @@ uint8_t erase_epcq_sector(int erase_offset);
 
 uint8_t erase_epcq_all_sector(void );
 
-#endif /* PERIPHERAL_LINKER_H */
+void epcq_controller_sanity_check(void );
 
+
+#endif /* PERIPHERAL_LINKER_H */
 
 /*
  * USER DEFINED DATA FOR alt_sys_init.c
@@ -49,3 +55,6 @@ uint8_t erase_epcq_all_sector(void );
 
 // Define and initialize the pointer to that static instance
 // alt_epcq_controller2_dev *epcq_dev_ptr = &EPCQ;
+
+
+

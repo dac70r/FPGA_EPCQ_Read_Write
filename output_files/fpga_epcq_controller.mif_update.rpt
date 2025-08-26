@@ -1,5 +1,5 @@
 MIF/HEX Update report for fpga_epcq_controller
-Mon Aug 25 17:47:49 2025
+Tue Aug 26 13:28:13 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Mon Aug 25 17:47:49 2025 ;
+; MIF/HEX Update Status ; Successful - Tue Aug 26 13:28:13 2025 ;
 ; Revision Name         ; fpga_epcq_controller                  ;
 ; Top-level Entity Name ; fpga_epcq_controller                  ;
 ; Family                ; Cyclone 10 LP                         ;
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Aug 25 17:47:48 2025
+    Info: Processing started: Tue Aug 26 13:28:12 2025
 Info: Command: quartus_cdb fpga_epcq_controller -c fpga_epcq_controller --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (113015): Width of data items in "onchip_mem.hex" is greater than the memory width. Wrapping data items to subsequent addresses. Found 1280 warnings, reporting 10 File: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS/mem_init/onchip_mem.hex Line: 1
@@ -77,7 +77,7 @@ Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS/mem_init/onchip_mem.hex File: C:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS/mem_init/onchip_mem.hex Line: 0
 Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4725 megabytes
-    Info: Processing ended: Mon Aug 25 17:47:49 2025
+    Info: Processing ended: Tue Aug 26 13:28:13 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

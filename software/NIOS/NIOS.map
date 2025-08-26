@@ -1,11 +1,11 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
-                              obj/default/hello_world_small.o (printf)
+                              obj/default/peripheral/peripheral_linker.o (printf)
 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
                               obj/default/peripheral/peripheral_linker.o (putchar)
 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
-                              obj/default/hello_world_small.o (puts)
+                              obj/default/peripheral/peripheral_linker.o (puts)
 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
                               c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o) (strlen)
 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
@@ -119,7 +119,7 @@ LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/
                 0x01010020                        PROVIDE (__ram_exceptions_end = ABSOLUTE (.))
                 0x01010020                        PROVIDE (__flash_exceptions_start = LOADADDR (.exceptions))
 
-.text           0x01010020     0x16f4
+.text           0x01010020     0x16d8
                 [!provide]                        PROVIDE (stext = ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -167,113 +167,114 @@ LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/
  .text          0x01010020       0x3c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
                 0x01010020                _start
  .text          0x0101005c        0x0 obj/default/hello_world_small.o
- .text.startup  0x0101005c      0x1f4 obj/default/hello_world_small.o
+ .text.startup  0x0101005c       0x54 obj/default/hello_world_small.o
                 0x0101005c                main
- .text          0x01010250      0x108 obj/default/peripheral/peripheral_linker.o
-                0x01010250                print_read_epcq_mem
-                0x010102c4                erase_epcq_sector
-                0x010102ec                erase_epcq_all_sector
- .text          0x01010358        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .text          0x010100b0      0x28c obj/default/peripheral/peripheral_linker.o
+                0x010100b0                print_read_epcq_mem
+                0x01010124                erase_epcq_sector
+                0x0101014c                erase_epcq_all_sector
+                0x010101b8                epcq_controller_sanity_check
+ .text          0x0101033c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
  .text._printf_r
-                0x01010358       0x3c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
-                0x01010358                _printf_r
- .text.printf   0x01010394       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
-                0x01010394                printf
- .text          0x010103dc        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+                0x0101033c       0x3c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+                0x0101033c                _printf_r
+ .text.printf   0x01010378       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+                0x01010378                printf
+ .text          0x010103c0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
  .text._putchar_r
-                0x010103dc        0x8 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
-                0x010103dc                _putchar_r
- .text.putchar  0x010103e4       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
-                0x010103e4                putchar
- .text          0x010103fc        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .text._puts_r  0x010103fc       0x80 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
-                0x010103fc                _puts_r
- .text.puts     0x0101047c       0x10 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
-                0x0101047c                puts
- .text          0x0101048c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .text.strlen   0x0101048c       0x1c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
-                0x0101048c                strlen
- .text          0x010104a8        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
- .text          0x010104a8        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+                0x010103c0        0x8 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+                0x010103c0                _putchar_r
+ .text.putchar  0x010103c8       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+                0x010103c8                putchar
+ .text          0x010103e0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .text._puts_r  0x010103e0       0x80 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+                0x010103e0                _puts_r
+ .text.puts     0x01010460       0x10 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+                0x01010460                puts
+ .text          0x01010470        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .text.strlen   0x01010470       0x1c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                0x01010470                strlen
+ .text          0x0101048c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .text          0x0101048c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
  .text.print_repeat
-                0x010104a8       0x6c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+                0x0101048c       0x6c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
  .text.___vfprintf_internal_r
-                0x01010514      0x51c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
-                0x01010514                ___vfprintf_internal_r
+                0x010104f8      0x51c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+                0x010104f8                ___vfprintf_internal_r
  .text.__vfprintf_internal
-                0x01010a30       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
-                0x01010a30                __vfprintf_internal
- .text          0x01010a48        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+                0x01010a14       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+                0x01010a14                __vfprintf_internal
+ .text          0x01010a2c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
  .text.__sfvwrite_small_dev
-                0x01010a48       0xa8 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
-                0x01010a48                __sfvwrite_small_dev
- .text          0x01010af0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .text.putc     0x01010af0       0x54 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
-                0x01010af0                putc
- .text._putc_r  0x01010b44       0x58 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
-                0x01010b44                _putc_r
- .text          0x01010b9c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+                0x01010a2c       0xa8 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+                0x01010a2c                __sfvwrite_small_dev
+ .text          0x01010ad4        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .text.putc     0x01010ad4       0x54 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+                0x01010ad4                putc
+ .text._putc_r  0x01010b28       0x58 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+                0x01010b28                _putc_r
+ .text          0x01010b80        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
  .text._write_r
-                0x01010b9c       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
-                0x01010b9c                _write_r
- .text          0x01010bec        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .text          0x01010bec      0x1b4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
-                0x01010bec                __divsi3
-                0x01010c6c                __modsi3
-                0x01010ce0                __udivsi3
-                0x01010d44                __umodsi3
- .text          0x01010da0       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
-                0x01010da0                __mulsi3
- .text          0x01010dc8       0x90 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
-                0x01010dc8                alt_busy_sleep
- .text          0x01010e58       0x84 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
-                0x01010e58                alt_load
- .text          0x01010edc       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
-                0x01010edc                alt_main
- .text          0x01010f08       0x38 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
-                0x01010f08                alt_putstr
- .text          0x01010f40       0x5c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
-                0x01010f40                write
- .text          0x01010f9c       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x01010f9c                alt_irq_init
-                0x01010fbc                alt_sys_init
- .text          0x01010fc8       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x01010fc8                altera_avalon_jtag_uart_write
- .text          0x01010ff8      0x57c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
-                0x01010ff8                alt_epcq_controller2_lock
-                0x01011054                alt_epcq_controller2_get_info
-                0x0101108c                alt_epcq_controller2_erase_block
-                0x01011120                alt_epcq_controller2_write_block
-                0x0101126c                alt_epcq_controller2_write
-                0x01011398                alt_epcq_controller2_read
-                0x010113e8                altera_epcq_controller2_init
- .text          0x01011574        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
-                0x01011574                alt_dcache_flush_all
- .text          0x01011578       0x68 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
-                0x01011578                alt_dev_llist_insert
- .text          0x010115e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .text          0x010115e0       0x60 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
-                0x010115e0                alt_flash_open_dev
-                0x0101162c                alt_flash_close_dev
- .text          0x01011640        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
-                0x01011640                alt_icache_flush_all
- .text          0x01011644        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
-                0x01011644                altera_nios2_gen2_irq_init
- .text          0x0101164c       0x70 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
-                0x0101164c                alt_find_dev
- .text          0x010116bc        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .text.memcmp   0x010116bc       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
-                0x010116bc                memcmp
- .text          0x010116ec        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
- .text.memcpy   0x010116ec       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
-                0x010116ec                memcpy
+                0x01010b80       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+                0x01010b80                _write_r
+ .text          0x01010bd0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .text          0x01010bd0      0x1b4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                0x01010bd0                __divsi3
+                0x01010c50                __modsi3
+                0x01010cc4                __udivsi3
+                0x01010d28                __umodsi3
+ .text          0x01010d84       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+                0x01010d84                __mulsi3
+ .text          0x01010dac       0x90 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                0x01010dac                alt_busy_sleep
+ .text          0x01010e3c       0x84 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+                0x01010e3c                alt_load
+ .text          0x01010ec0       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+                0x01010ec0                alt_main
+ .text          0x01010eec       0x38 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+                0x01010eec                alt_putstr
+ .text          0x01010f24       0x5c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+                0x01010f24                write
+ .text          0x01010f80       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x01010f80                alt_irq_init
+                0x01010fa0                alt_sys_init
+ .text          0x01010fac       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x01010fac                altera_avalon_jtag_uart_write
+ .text          0x01010fdc      0x57c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+                0x01010fdc                alt_epcq_controller2_lock
+                0x01011038                alt_epcq_controller2_get_info
+                0x01011070                alt_epcq_controller2_erase_block
+                0x01011104                alt_epcq_controller2_write_block
+                0x01011250                alt_epcq_controller2_write
+                0x0101137c                alt_epcq_controller2_read
+                0x010113cc                altera_epcq_controller2_init
+ .text          0x01011558        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x01011558                alt_dcache_flush_all
+ .text          0x0101155c       0x68 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+                0x0101155c                alt_dev_llist_insert
+ .text          0x010115c4        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .text          0x010115c4       0x60 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+                0x010115c4                alt_flash_open_dev
+                0x01011610                alt_flash_close_dev
+ .text          0x01011624        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x01011624                alt_icache_flush_all
+ .text          0x01011628        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x01011628                altera_nios2_gen2_irq_init
+ .text          0x01011630       0x70 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+                0x01011630                alt_find_dev
+ .text          0x010116a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .text.memcmp   0x010116a0       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+                0x010116a0                memcmp
+ .text          0x010116d0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .text.memcpy   0x010116d0       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                0x010116d0                memcpy
  *(.gnu.warning.*)
  *(.fini)
                 [!provide]                        PROVIDE (__etext = ABSOLUTE (.))
                 [!provide]                        PROVIDE (_etext = ABSOLUTE (.))
                 [!provide]                        PROVIDE (etext = ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x01011714                        . = ALIGN (0x4)
+                0x010116f8                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start = ABSOLUTE (.))
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = ABSOLUTE (.))
@@ -296,169 +297,170 @@ LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/
  *(SORT_BY_NAME(.dtors.*))
                 [!provide]                        PROVIDE (__DTOR_END__ = ABSOLUTE (.))
  *(.jcr)
-                0x01011714                        . = ALIGN (0x4)
+                0x010116f8                        . = ALIGN (0x4)
 
-.rodata         0x01011714      0x138
-                0x01011714                        PROVIDE (__ram_rodata_start = ABSOLUTE (.))
-                0x01011714                        . = ALIGN (0x4)
+.rodata         0x010116f8      0x130
+                0x010116f8                        PROVIDE (__ram_rodata_start = ABSOLUTE (.))
+                0x010116f8                        . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x01011714       0xf6 obj/default/hello_world_small.o
- *fill*         0x0101180a        0x2 
+                0x010116f8       0x6f obj/default/hello_world_small.o
+ *fill*         0x01011767        0x1 
  .rodata.str1.4
-                0x0101180c       0x28 obj/default/peripheral/peripheral_linker.o
+                0x01011768       0xa6 obj/default/peripheral/peripheral_linker.o
+ *fill*         0x0101180e        0x2 
  .rodata._puts_r.str1.4
-                0x01011834        0x2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- *fill*         0x01011836        0x2 
+                0x01011810        0x2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ *fill*         0x01011812        0x2 
  .rodata.str1.4
-                0x01011838       0x12 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x01011814       0x12 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
  *(.rodata1)
-                0x0101184c                        . = ALIGN (0x4)
- *fill*         0x0101184a        0x2 
-                0x0101184c                        PROVIDE (__ram_rodata_end = ABSOLUTE (.))
-                0x01011714                        PROVIDE (__flash_rodata_start = LOADADDR (.rodata))
+                0x01011828                        . = ALIGN (0x4)
+ *fill*         0x01011826        0x2 
+                0x01011828                        PROVIDE (__ram_rodata_end = ABSOLUTE (.))
+                0x010116f8                        PROVIDE (__flash_rodata_start = LOADADDR (.rodata))
 
-.rwdata         0x0101184c      0x150 load address 0x0101199c
-                0x0101184c                        PROVIDE (__ram_rwdata_start = ABSOLUTE (.))
-                0x0101184c                        . = ALIGN (0x4)
+.rwdata         0x01011828      0x150 load address 0x01011978
+                0x01011828                        PROVIDE (__ram_rwdata_start = ABSOLUTE (.))
+                0x01011828                        . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0101184c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
- .data          0x0101184c        0x0 obj/default/hello_world_small.o
- .data          0x0101184c        0x0 obj/default/peripheral/peripheral_linker.o
- .data          0x0101184c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .data          0x0101184c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .data          0x0101184c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .data          0x0101184c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .data          0x0101184c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .data          0x01011828        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
+ .data          0x01011828        0x0 obj/default/hello_world_small.o
+ .data          0x01011828        0x0 obj/default/peripheral/peripheral_linker.o
+ .data          0x01011828        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .data          0x01011828        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .data          0x01011828        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .data          0x01011828        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .data          0x01011828        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
  .data._impure_data
-                0x0101184c       0x54 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
-                0x0101184c                _impure_data
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .data          0x010118a0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .data          0x010118a0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .data          0x010118a0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .data          0x010118a0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .data          0x010118a0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .data          0x010118a0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .data          0x010118a0       0xdc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .data          0x0101197c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .data          0x0101197c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .data          0x0101197c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
-                0x0101997c                        _gp = ABSOLUTE ((. + 0x8000))
+                0x01011828       0x54 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                0x01011828                _impure_data
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .data          0x0101187c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .data          0x0101187c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .data          0x0101187c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x0101187c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x0101187c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .data          0x0101187c        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .data          0x0101187c       0xdc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x01011958        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .data          0x01011958        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .data          0x01011958        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                0x01019958                        _gp = ABSOLUTE ((. + 0x8000))
                 [!provide]                        PROVIDE (gp = _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x0101197c        0x1 obj/default/hello_world_small.o
-                0x0101197c                on_off
- *fill*         0x0101197d        0x3 
- .sdata         0x01011980        0x4 obj/default/peripheral/peripheral_linker.o
-                0x01011980                length
+ .sdata         0x01011958        0x1 obj/default/hello_world_small.o
+                0x01011958                on_off
+ *fill*         0x01011959        0x3 
+ .sdata         0x0101195c        0x4 obj/default/peripheral/peripheral_linker.o
+                0x0101195c                length
  .sdata._impure_ptr
-                0x01011984        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
-                0x01011984                _impure_ptr
- .sdata         0x01011988        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x01011988                epcq_dev_ptr
-                0x0101198c                DEBUG
- .sdata         0x01011990        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
-                0x01011990                alt_errno
- .sdata         0x01011994        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
-                0x01011994                alt_flash_dev_list
+                0x01011960        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                0x01011960                _impure_ptr
+ .sdata         0x01011964        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x01011964                epcq_dev_ptr
+                0x01011968                DEBUG
+ .sdata         0x0101196c        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+                0x0101196c                alt_errno
+ .sdata         0x01011970        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+                0x01011970                alt_flash_dev_list
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x0101199c                        . = ALIGN (0x4)
-                0x0101199c                        _edata = ABSOLUTE (.)
+                0x01011978                        . = ALIGN (0x4)
+                0x01011978                        _edata = ABSOLUTE (.)
                 [!provide]                        PROVIDE (edata = ABSOLUTE (.))
-                0x0101199c                        PROVIDE (__ram_rwdata_end = ABSOLUTE (.))
-                0x0101199c                        PROVIDE (__flash_rwdata_start = LOADADDR (.rwdata))
+                0x01011978                        PROVIDE (__ram_rwdata_end = ABSOLUTE (.))
+                0x01011978                        PROVIDE (__flash_rwdata_start = LOADADDR (.rwdata))
 
-.bss            0x01011aec     0x1018
-                0x01011aec                        __bss_start = ABSOLUTE (.)
+.bss            0x01011ac8     0x1018
+                0x01011ac8                        __bss_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (__sbss_start = ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_start = ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x01011aec        0x8 obj/default/peripheral/peripheral_linker.o
-                0x01011aec                erase_offset
-                0x01011af0                mem_read_offset
- .sbss.errno    0x01011af4        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
-                0x01011af4                errno
- .sbss          0x01011af8        0xc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
-                0x01011af8                alt_envp
-                0x01011afc                alt_argv
-                0x01011b00                alt_argc
+ .sbss          0x01011ac8        0x8 obj/default/peripheral/peripheral_linker.o
+                0x01011ac8                erase_offset
+                0x01011acc                mem_read_offset
+ .sbss.errno    0x01011ad0        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+                0x01011ad0                errno
+ .sbss          0x01011ad4        0xc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+                0x01011ad4                alt_envp
+                0x01011ad8                alt_argv
+                0x01011adc                alt_argc
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
                 [!provide]                        PROVIDE (__sbss_end = ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_end = ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x01011b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
- .bss           0x01011b04        0x0 obj/default/hello_world_small.o
- .bss           0x01011b04     0x1000 obj/default/peripheral/peripheral_linker.o
-                0x01011b04                subsector_buffer
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .bss           0x01012b04        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .bss           0x01012b04        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .bss           0x01011ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
+ .bss           0x01011ae0        0x0 obj/default/hello_world_small.o
+ .bss           0x01011ae0     0x1000 obj/default/peripheral/peripheral_linker.o
+                0x01011ae0                subsector_buffer
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x01012ae0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .bss           0x01012ae0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
  *(COMMON)
-                0x01012b04                        . = ALIGN (0x4)
-                0x01012b04                        __bss_end = ABSOLUTE (.)
+                0x01012ae0                        . = ALIGN (0x4)
+                0x01012ae0                        __bss_end = ABSOLUTE (.)
 
-.EPCQ_avl_mem   0x00000000        0x0 load address 0x01012b04
+.EPCQ_avl_mem   0x00000000        0x0 load address 0x01012ae0
                 [!provide]                        PROVIDE (_alt_partition_EPCQ_avl_mem_start = ABSOLUTE (.))
  *(.EPCQ_avl_mem .EPCQ_avl_mem. EPCQ_avl_mem.*)
                 0x00000000                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_EPCQ_avl_mem_end = ABSOLUTE (.))
                 [!provide]                        PROVIDE (_alt_partition_EPCQ_avl_mem_load_addr = LOADADDR (.EPCQ_avl_mem))
 
-.RAM            0x01012b04        0x0
+.RAM            0x01012ae0        0x0
                 [!provide]                        PROVIDE (_alt_partition_RAM_start = ABSOLUTE (.))
  *(.RAM .RAM. RAM.*)
-                0x01012b04                        . = ALIGN (0x4)
+                0x01012ae0                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_RAM_end = ABSOLUTE (.))
-                0x01012b04                        _end = ABSOLUTE (.)
-                0x01012b04                        end = ABSOLUTE (.)
-                0x01012b04                        __alt_stack_base = ABSOLUTE (.)
+                0x01012ae0                        _end = ABSOLUTE (.)
+                0x01012ae0                        end = ABSOLUTE (.)
+                0x01012ae0                        __alt_stack_base = ABSOLUTE (.)
                 [!provide]                        PROVIDE (_alt_partition_RAM_load_addr = LOADADDR (.RAM))
 
 .stab
@@ -596,201 +598,201 @@ LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x734e
+.debug_info     0x00000000     0x6f71
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0x3f c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
- .debug_info    0x0000003f      0x75c obj/default/hello_world_small.o
- .debug_info    0x0000079b      0x649 obj/default/peripheral/peripheral_linker.o
- .debug_info    0x00000de4      0x666 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .debug_info    0x0000144a      0x5a9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .debug_info    0x000019f3      0x5ec c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .debug_info    0x00001fdf       0xd1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .debug_info    0x000020b0      0x4eb c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
- .debug_info    0x0000259b      0xd7f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .debug_info    0x0000331a      0x5c4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .debug_info    0x000038de      0x5e6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .debug_info    0x00003ec4      0x5a4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .debug_info    0x00004468       0x85 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .debug_info    0x000044ed      0x347 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .debug_info    0x00004834       0xc4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .debug_info    0x000048f8      0x10c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .debug_info    0x00004a04      0x239 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .debug_info    0x00004c3d      0x13e c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .debug_info    0x00004d7b      0x15c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_info    0x00004ed7      0x1a8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .debug_info    0x0000507f      0x5d1 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_info    0x00005650      0x149 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_info    0x00005799      0xc23 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .debug_info    0x000063bc       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_info    0x00006449      0x1c9 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_info    0x00006612       0xa8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_info    0x000066ba      0x5ff c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .debug_info    0x00006cb9       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_info    0x00006d46       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_info    0x00006dd3      0x361 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_info    0x00007134       0xf9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .debug_info    0x0000722d      0x121 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_info    0x0000003f      0x160 obj/default/hello_world_small.o
+ .debug_info    0x0000019f      0x868 obj/default/peripheral/peripheral_linker.o
+ .debug_info    0x00000a07      0x666 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .debug_info    0x0000106d      0x5a9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .debug_info    0x00001616      0x5ec c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .debug_info    0x00001c02       0xd1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_info    0x00001cd3      0x4eb c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_info    0x000021be      0xd7f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .debug_info    0x00002f3d      0x5c4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .debug_info    0x00003501      0x5e6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .debug_info    0x00003ae7      0x5a4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .debug_info    0x0000408b       0x85 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_info    0x00004110      0x347 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_info    0x00004457       0xc4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_info    0x0000451b      0x10c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_info    0x00004627      0x239 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x00004860      0x13e c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000499e      0x15c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x00004afa      0x1a8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .debug_info    0x00004ca2      0x5d1 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x00005273      0x149 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x000053bc      0xc23 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .debug_info    0x00005fdf       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000606c      0x1c9 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_info    0x00006235       0xa8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_info    0x000062dd      0x5ff c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .debug_info    0x000068dc       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x00006969       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x000069f6      0x361 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_info    0x00006d57       0xf9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .debug_info    0x00006e50      0x121 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
 
-.debug_abbrev   0x00000000     0x255c
+.debug_abbrev   0x00000000     0x24a8
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x1f c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
- .debug_abbrev  0x0000001f      0x1dd obj/default/hello_world_small.o
- .debug_abbrev  0x000001fc      0x1c7 obj/default/peripheral/peripheral_linker.o
- .debug_abbrev  0x000003c3      0x1ec c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .debug_abbrev  0x000005af      0x1c9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .debug_abbrev  0x00000778      0x1db c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .debug_abbrev  0x00000953       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .debug_abbrev  0x000009df      0x142 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
- .debug_abbrev  0x00000b21      0x2d9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .debug_abbrev  0x00000dfa      0x1c9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .debug_abbrev  0x00000fc3      0x1c5 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .debug_abbrev  0x00001188      0x1ae c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .debug_abbrev  0x00001336       0x39 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .debug_abbrev  0x0000136f      0x10c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .debug_abbrev  0x0000147b       0x80 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .debug_abbrev  0x000014fb       0xb9 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .debug_abbrev  0x000015b4      0x12c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .debug_abbrev  0x000016e0       0xeb c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .debug_abbrev  0x000017cb       0xd3 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_abbrev  0x0000189e      0x117 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .debug_abbrev  0x000019b5      0x173 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_abbrev  0x00001b28       0xdc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_abbrev  0x00001c04      0x2d4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .debug_abbrev  0x00001ed8       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_abbrev  0x00001f1b      0x147 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_abbrev  0x00002062       0x70 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_abbrev  0x000020d2      0x170 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .debug_abbrev  0x00002242       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_abbrev  0x00002285       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_abbrev  0x000022c8      0x132 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_abbrev  0x000023fa       0xa1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .debug_abbrev  0x0000249b       0xc1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_abbrev  0x0000001f       0xf2 obj/default/hello_world_small.o
+ .debug_abbrev  0x00000111      0x1fe obj/default/peripheral/peripheral_linker.o
+ .debug_abbrev  0x0000030f      0x1ec c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .debug_abbrev  0x000004fb      0x1c9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .debug_abbrev  0x000006c4      0x1db c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .debug_abbrev  0x0000089f       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_abbrev  0x0000092b      0x142 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_abbrev  0x00000a6d      0x2d9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .debug_abbrev  0x00000d46      0x1c9 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .debug_abbrev  0x00000f0f      0x1c5 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .debug_abbrev  0x000010d4      0x1ae c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .debug_abbrev  0x00001282       0x39 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_abbrev  0x000012bb      0x10c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x000013c7       0x80 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_abbrev  0x00001447       0xb9 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_abbrev  0x00001500      0x12c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x0000162c       0xeb c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00001717       0xd3 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x000017ea      0x117 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .debug_abbrev  0x00001901      0x173 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x00001a74       0xdc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x00001b50      0x2d4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .debug_abbrev  0x00001e24       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x00001e67      0x147 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_abbrev  0x00001fae       0x70 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_abbrev  0x0000201e      0x170 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .debug_abbrev  0x0000218e       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x000021d1       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x00002214      0x132 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_abbrev  0x00002346       0xa1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .debug_abbrev  0x000023e7       0xc1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
 
-.debug_line     0x00000000     0x212f
+.debug_line     0x00000000     0x2125
  *(.debug_line)
  .debug_line    0x00000000       0x66 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
- .debug_line    0x00000066      0x16b obj/default/hello_world_small.o
- .debug_line    0x000001d1      0x141 obj/default/peripheral/peripheral_linker.o
- .debug_line    0x00000312       0xd4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .debug_line    0x000003e6       0xa4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .debug_line    0x0000048a       0xc2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .debug_line    0x0000054c       0x7c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .debug_line    0x000005c8       0x4c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
- .debug_line    0x00000614      0x581 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .debug_line    0x00000b95       0xd7 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .debug_line    0x00000c6c       0xe3 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .debug_line    0x00000d4f       0xae c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .debug_line    0x00000dfd       0x3a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .debug_line    0x00000e37      0x2e3 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .debug_line    0x0000111a       0x88 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .debug_line    0x000011a2       0xe2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .debug_line    0x00001284       0xd2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .debug_line    0x00001356       0xa2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .debug_line    0x000013f8       0x79 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_line    0x00001471       0xc5 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .debug_line    0x00001536       0xad c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x000015e3       0x93 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x00001676      0x5dc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .debug_line    0x00001c52       0x4e c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x00001ca0       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_line    0x00001d9d       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_line    0x00001de9       0xd4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .debug_line    0x00001ebd       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x00001f09       0x54 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_line    0x00001f5d       0xb7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_line    0x00002014       0x8f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .debug_line    0x000020a3       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_line    0x00000066       0xc2 obj/default/hello_world_small.o
+ .debug_line    0x00000128      0x1e0 obj/default/peripheral/peripheral_linker.o
+ .debug_line    0x00000308       0xd4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .debug_line    0x000003dc       0xa4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .debug_line    0x00000480       0xc2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .debug_line    0x00000542       0x7c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_line    0x000005be       0x4c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_line    0x0000060a      0x581 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .debug_line    0x00000b8b       0xd7 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .debug_line    0x00000c62       0xe3 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .debug_line    0x00000d45       0xae c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .debug_line    0x00000df3       0x3a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_line    0x00000e2d      0x2e3 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_line    0x00001110       0x88 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_line    0x00001198       0xe2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_line    0x0000127a       0xd2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000134c       0xa2 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x000013ee       0x79 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x00001467       0xc5 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .debug_line    0x0000152c       0xad c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x000015d9       0x93 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x0000166c      0x5dc c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .debug_line    0x00001c48       0x4e c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00001c96       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_line    0x00001d93       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_line    0x00001ddf       0xd4 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .debug_line    0x00001eb3       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x00001eff       0x54 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x00001f53       0xb7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_line    0x0000200a       0x8f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .debug_line    0x00002099       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
 
-.debug_frame    0x00000000      0x74c
+.debug_frame    0x00000000      0x76c
  *(.debug_frame)
  .debug_frame   0x00000000       0x28 obj/default/hello_world_small.o
- .debug_frame   0x00000028       0x88 obj/default/peripheral/peripheral_linker.o
- .debug_frame   0x000000b0       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
- .debug_frame   0x000000f8       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
- .debug_frame   0x00000128       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
- .debug_frame   0x00000170       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
- .debug_frame   0x00000190       0x90 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
- .debug_frame   0x00000220       0x3c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
- .debug_frame   0x0000025c       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
- .debug_frame   0x000002ac       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
- .debug_frame   0x000002dc       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
- .debug_frame   0x0000032c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .debug_frame   0x0000034c       0x34 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
- .debug_frame   0x00000380       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
- .debug_frame   0x000003ac       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
- .debug_frame   0x000003d8       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_frame   0x00000408       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
- .debug_frame   0x00000434       0x3c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_frame   0x00000470       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_frame   0x00000490      0x164 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
- .debug_frame   0x000005f4       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_frame   0x00000614       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_frame   0x00000640       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
- .debug_frame   0x0000068c       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_frame   0x000006ac       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_frame   0x000006cc       0x40 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_frame   0x0000070c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .debug_frame   0x0000072c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_frame   0x00000028       0xa8 obj/default/peripheral/peripheral_linker.o
+ .debug_frame   0x000000d0       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .debug_frame   0x00000118       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .debug_frame   0x00000148       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .debug_frame   0x00000190       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_frame   0x000001b0       0x90 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .debug_frame   0x00000240       0x3c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .debug_frame   0x0000027c       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .debug_frame   0x000002cc       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .debug_frame   0x000002fc       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_frame   0x0000034c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_frame   0x0000036c       0x34 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_frame   0x000003a0       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x000003cc       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x000003f8       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x00000428       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .debug_frame   0x00000454       0x3c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000490       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x000004b0      0x164 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .debug_frame   0x00000614       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00000634       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_frame   0x00000660       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .debug_frame   0x000006ac       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x000006cc       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x000006ec       0x40 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_frame   0x0000072c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .debug_frame   0x0000074c       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
 
-.debug_str      0x00000000     0x1061
+.debug_str      0x00000000     0x107e
  *(.debug_str)
  .debug_str     0x00000000       0x7a c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
                                  0x81 (size before relaxing)
- .debug_str     0x0000007a      0x319 obj/default/hello_world_small.o
-                                0x3c9 (size before relaxing)
- .debug_str     0x00000393       0x84 obj/default/peripheral/peripheral_linker.o
-                                0x3f5 (size before relaxing)
- .debug_str     0x00000417      0x332 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+ .debug_str     0x0000007a       0xfe obj/default/hello_world_small.o
+                                0x144 (size before relaxing)
+ .debug_str     0x00000178      0x2bc obj/default/peripheral/peripheral_linker.o
+                                0x447 (size before relaxing)
+ .debug_str     0x00000434      0x332 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
                                 0x402 (size before relaxing)
- .debug_str     0x00000749       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+ .debug_str     0x00000766       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
                                 0x3a9 (size before relaxing)
- .debug_str     0x0000075c        0xf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+ .debug_str     0x00000779        0xf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
                                 0x3b3 (size before relaxing)
- .debug_str     0x0000076b        0xf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_str     0x00000788        0xf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
                                 0x114 (size before relaxing)
- .debug_str     0x0000076b        0xd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_str     0x00000788        0xd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
                                 0x390 (size before relaxing)
- .debug_str     0x00000778      0x2a1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+ .debug_str     0x00000795      0x2a1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
                                 0x749 (size before relaxing)
- .debug_str     0x00000a19       0x25 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+ .debug_str     0x00000a36       0x25 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
                                 0x3bd (size before relaxing)
- .debug_str     0x00000a3e        0xc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+ .debug_str     0x00000a5b        0xc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
                                 0x3b1 (size before relaxing)
- .debug_str     0x00000a4a        0xc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+ .debug_str     0x00000a67        0xc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
                                 0x39c (size before relaxing)
- .debug_str     0x00000a4a      0x106 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
- .debug_str     0x00000a4a       0xcd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_str     0x00000a67      0x106 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_str     0x00000a67       0xcd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
                                 0x122 (size before relaxing)
- .debug_str     0x00000b17       0xe6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
- .debug_str     0x00000b17       0x1a c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_str     0x00000b34       0xe6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_str     0x00000b34       0x1a c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_busy_sleep.o)
                                 0x12c (size before relaxing)
- .debug_str     0x00000b31      0x111 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_str     0x00000b4e      0x111 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
                                 0x208 (size before relaxing)
- .debug_str     0x00000c42       0x4b c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_str     0x00000c5f       0x4b c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_main.o)
                                 0x138 (size before relaxing)
- .debug_str     0x00000c8d       0x44 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_str     0x00000caa       0x44 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_putstr.o)
                                 0x145 (size before relaxing)
- .debug_str     0x00000cd1       0x18 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+ .debug_str     0x00000cee       0x18 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
                                 0x15c (size before relaxing)
- .debug_str     0x00000ce9      0x101 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_str     0x00000d06      0x101 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_sys_init.o)
                                 0x472 (size before relaxing)
- .debug_str     0x00000dea      0x101 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_str     0x00000e07      0x101 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
                                 0x15c (size before relaxing)
- .debug_str     0x00000dea      0x1c7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+ .debug_str     0x00000e07      0x1c7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
                                 0x5ef (size before relaxing)
- .debug_str     0x00000fb1       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_str     0x00000fb1       0x17 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_str     0x00000fce       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x00000fce       0x17 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
                                 0x174 (size before relaxing)
- .debug_str     0x00000fc8        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_str     0x00000fe5        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_errno.o)
                                  0xfa (size before relaxing)
- .debug_str     0x00000fd0       0x76 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
+ .debug_str     0x00000fed       0x76 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_flash_dev.o)
                                 0x308 (size before relaxing)
- .debug_str     0x00001046       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_str     0x00001046      0x103 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_str     0x00001046        0x7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_str     0x00001063       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x00001063      0x103 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_str     0x00001063        0x7 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_find_dev.o)
                                 0x1a4 (size before relaxing)
- .debug_str     0x0000104d      0x10e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
- .debug_str     0x0000104d       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_str     0x0000106a      0x10e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+ .debug_str     0x0000106a       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
                                 0x122 (size before relaxing)
 
 .debug_loc
@@ -830,49 +832,49 @@ LOAD linker stubs
  .debug_ranges  0x00000000       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp//obj/HAL/src/crt0.o
 
 .debug_rnglists
-                0x00000000      0x28f
+                0x00000000      0x296
  .debug_rnglists
-                0x00000000       0x31 obj/default/hello_world_small.o
+                0x00000000       0x22 obj/default/hello_world_small.o
  .debug_rnglists
-                0x00000031       0x33 obj/default/peripheral/peripheral_linker.o
+                0x00000022       0x49 obj/default/peripheral/peripheral_linker.o
  .debug_rnglists
-                0x00000064       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
+                0x0000006b       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
  .debug_rnglists
-                0x0000007d       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
+                0x00000084       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putchar.o)
  .debug_rnglists
-                0x00000096       0x1a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
+                0x0000009d       0x1a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-puts.o)
  .debug_rnglists
-                0x000000b0       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                0x000000b7       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
  .debug_rnglists
-                0x000000c3       0x84 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
+                0x000000ca       0x84 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-vfprintf.o)
  .debug_rnglists
-                0x00000147       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
+                0x0000014e       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-fvwrite_small_dev.o)
  .debug_rnglists
-                0x0000015b       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
+                0x00000162       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-putc.o)
  .debug_rnglists
-                0x00000174       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
+                0x0000017b       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-writer.o)
  .debug_rnglists
-                0x00000187       0x3f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                0x0000018e       0x3f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
  .debug_rnglists
-                0x000001c6       0x23 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
+                0x000001cd       0x23 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_load.o)
  .debug_rnglists
-                0x000001e9       0x16 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
+                0x000001f0       0x16 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_write.o)
  .debug_rnglists
-                0x000001ff       0x54 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
+                0x00000206       0x54 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(altera_epcq_controller2.o)
  .debug_rnglists
-                0x00000253       0x16 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+                0x0000025a       0x16 c:/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
  .debug_rnglists
-                0x00000269       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
+                0x00000270       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcmp.o)
  .debug_rnglists
-                0x0000027c       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                0x00000283       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
 
 .debug_line_str
                 0x00000000      0xd18
  .debug_line_str
-                0x00000000      0x2cd obj/default/hello_world_small.o
-                                0x345 (size before relaxing)
+                0x00000000      0x21a obj/default/hello_world_small.o
+                                0x292 (size before relaxing)
  .debug_line_str
-                0x000002cd       0x1f obj/default/peripheral/peripheral_linker.o
+                0x0000021a       0xd2 obj/default/peripheral/peripheral_linker.o
                                 0x344 (size before relaxing)
  .debug_line_str
                 0x000002ec      0x23c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-printf.o)
