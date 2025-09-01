@@ -17,30 +17,17 @@ int main()
   // Perform Sanity Check on the EPCQ Controller
   epcq_controller_sanity_check();
 
-  // Workflow for Updating a Particular Memory Location
   printf("Modify Data & Save to EPCQ Memory!\n");
-
-  // 1. Read EPCQ to Update Local Sub-sector Memory
-  alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length);
-
-  // 2. Make Necessary Changes to Local Sub-sector Memory
-	  subsector_buffer[0] = 0x12;
-	  subsector_buffer[1] = 0x34;
-	  subsector_buffer[2] = 0x56;
-	  subsector_buffer[3] = 0x78;
-	  subsector_buffer[4] = 0x98;
-	  subsector_buffer[5] = 0x12;
-
-  // 3. Erase the EPCQ Memory
-  erase_epcq_sector(mem_read_offset);
-
-  // 4. Write Updated Local Sub-sector Memory into EPCQ
+  subsector_buffer[0] = 0x12;
+  subsector_buffer[1] = 0x34;
+  subsector_buffer[2] = 0x56;
+  subsector_buffer[3] = 0x78;
+  subsector_buffer[4] = 0x98;
+  subsector_buffer[5] = 0x12;
   alt_epcq_controller2_write(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length);
 
-  // 5. Read EPCQ to Update Local Sub-sector Memory
+  printf("Read Data, Update Local Sub-sector Array & Read It's Contents!\n");
   alt_epcq_controller2_read(&epcq_dev_ptr->dev, mem_read_offset, subsector_buffer, length);
-
-  // 6. (For Testing) Printf to Verify Changes
   print_read_epcq_mem(subsector_buffer, mem_read_offset, length);
 
   /* Event loop never exits. */

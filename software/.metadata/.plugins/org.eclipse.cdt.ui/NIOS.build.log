@@ -1,9 +1,9 @@
-13:46:59 **** Incremental Build of configuration Nios II for project NIOS ****
+23:34:06 **** Incremental Build of configuration Nios II for project NIOS ****
 wsl make all 
 Info: Building /mnt/c/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/
 make --no-print-directory -C /mnt/c/Users/guan-ming.dennis-won/Documents/Code/FPGA_EPCQ_Programmer/software/NIOS_bsp/
 [BSP build complete]
 [NIOS build complete]
 
-13:47:00 Build Finished (took 1s.170ms)
+23:34:11 Build Finished (took 5s.146ms)
 
